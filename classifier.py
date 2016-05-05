@@ -20,9 +20,9 @@ def load_data(filename, use_labels=True):
     return all 0s. 
     """
 
-    # load column 1 to 8 (ignore last one)
+    # load column 1 to 7 (ignore last two)
     data = np.loadtxt(open("data/" + filename), delimiter=',',
-                      usecols=range(1, 9), skiprows=1)
+                      usecols=range(1, 8), skiprows=1)
     if use_labels:
         labels = np.loadtxt(open("data/" + filename), delimiter=',',
                             usecols=[0], skiprows=1)
@@ -66,7 +66,7 @@ def main():
 
     # === training & metrics === #
     mean_auc = 0.0
-    n = 10  # repeat the CV procedure 10 times to get more precise results
+    n = 20  # repeat the CV procedure 20 times to get more precise results
     for i in range(n):
         # for each iteration, randomly hold out 20% of the data as CV set
         X_train, X_cv, y_train, y_cv = cross_validation.train_test_split(
