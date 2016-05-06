@@ -2,6 +2,7 @@
 """ Amazon Access Challenge Kaggle
 
 Jessica L & Leela K
+private score: 0.88985
 """
 
 import pandas as pd
